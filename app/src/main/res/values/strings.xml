@@ -2,4 +2,7 @@
     <string name="app_name">UD5_Products</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tv_name">Name</string>
+    <string name="tv_price_text">Price</string>
+    <string name="tv_amountWarning_text">Últimas unidades</string>
 </resources>
