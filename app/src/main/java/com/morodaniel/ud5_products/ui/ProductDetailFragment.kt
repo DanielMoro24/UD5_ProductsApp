@@ -1,12 +1,20 @@
 package com.morodaniel.ud5_products.ui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.morodaniel.ud5_products.databinding.FragmentProductDetailBinding
+import com.morodaniel.ud5_products.extensions.imageUrl
+import com.morodaniel.ud5_products.network.NetworkConfig
+import com.morodaniel.ud5_products.network.models.ProductsAPIResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class ProductDetailFragment : Fragment() {
     private var _binding: FragmentProductDetailBinding? = null
@@ -18,9 +26,7 @@ class ProductDetailFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            if (it != null) {
-                productId = args.prodId
-            }
+            productId = args.prodId
         }
     }
 
@@ -34,8 +40,43 @@ class ProductDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //getUserById()
-        binding.tvPrueba.text = productId.toString()
+        getProdById()
+    }
+
+    private fun getProdById() {
+        NetworkConfig.productsService.getOneProduct(productId).enqueue(object :
+            Callback<ProductsAPIResponse> {
+            @SuppressLint("SetTextI18n")
+            override fun onResponse(
+                call: Call<ProductsAPIResponse>,
+                response: Response<ProductsAPIResponse>
+            ) {
+                if (response.isSuccessful) {
+                    val prod = response.body()?.prods?.get(0)
+                    if (prod != null) {
+                        binding.ivImage2.imageUrl(prod.image)
+                        binding.tvDetailName.text = prod.name
+                        binding.tvDetailDescription.text = prod.description
+                        binding.tvDetailPrice.text = prod.price.toString() + " €"
+                        binding.tvDetailDicountPrice.text = prod.discountPrice.toString() + " €"
+                        binding.tvDetailAmount.text = prod.amount.toString()
+                        if (prod.availability) {
+                            binding.tvDetailAvailability.text = "Available"
+                        } else {
+                            binding.tvDetailAvailability.text = "Not available"
+                        }
+                    }
+                } else {
+                    Log.e("Network", "connexion error")
+                }
+            }
+
+            override fun onFailure(call: Call<ProductsAPIResponse>, t: Throwable) {
+                Log.e("Network", "connexion error", t)
+
+
+            }
+        })
     }
 
     override fun onDestroyView() {

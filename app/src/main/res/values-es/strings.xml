@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">UD5_Productos</string>
+    <string name="tv_name">Nombre</string>
+    <string name="tv_price_text">Precio</string>
+    <string name="tv_amountWarning_text">últimas unidades</string>
+    <string name="iv_product_image_description">Imagen del producto</string>
+    <string name="tv_description_text">Descripción</string>
+    <string name="tv_discount_price_text">Precio con descuento</string>
+    <string name="tv_price_text2">Precio:</string>
+    <string name="tv_discount_price_text2">Precio con descuento:</string>
+    <string name="tv_amount_text">Unidades totales:</string>
+    <string name="tv_detail_amount_text">Unidades</string>
+    <string name="tv_availability_text">Disponibilidad:</string>
+    <string name="tv_detail_availability">Disponibilidad</string>
+    <string name="tit_search_hint">Búsqueda por nombre</string>
+</resources>

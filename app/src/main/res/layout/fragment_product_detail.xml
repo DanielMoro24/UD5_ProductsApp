@@ -7,15 +7,143 @@
     android:layout_height="match_parent"
     tools:context=".ui.ProductDetailFragment" >
 
-    <TextView
-        android:id="@+id/tv_prueba"
-        android:layout_width="123dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="146dp"
-        android:layout_marginTop="66dp"
-        android:layout_marginEnd="207dp"
-        android:text="TextView"
+    <ImageView
+        android:id="@+id/iv_image2"
+        android:layout_width="142dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="163dp"
+        android:contentDescription="@string/iv_product_image_description"
+        android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/tv_name2"
+        android:layout_width="53dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/tv_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_image2" />
+
+    <TextView
+        android:id="@+id/tv_detail_name"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:lines="3"
+        android:text="@string/tv_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name2" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_description_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_name" />
+
+    <TextView
+        android:id="@+id/tv_detail_description"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:lines="3"
+        android:text="@string/tv_description_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_description" />
+
+    <TextView
+        android:id="@+id/tv_price2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_price_text2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_description" />
+
+    <TextView
+        android:id="@+id/tv_detail_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_price_text"
+        app:layout_constraintStart_toEndOf="@+id/tv_price2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_description" />
+
+    <TextView
+        android:id="@+id/tv_discount_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_discount_price_text2"
+        app:layout_constraintStart_toEndOf="@+id/tv_detail_price"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_description" />
+
+    <TextView
+        android:id="@+id/tv_detail_dicount_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_discount_price_text"
+        app:layout_constraintStart_toEndOf="@+id/tv_discount_price"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_description" />
+
+    <TextView
+        android:id="@+id/tv_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/tv_amount_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_price2" />
+
+    <TextView
+        android:id="@+id/tv_detail_amount"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/tv_detail_amount_text"
+        app:layout_constraintStart_toEndOf="@+id/tv_amount"
+        app:layout_constraintTop_toBottomOf="@+id/tv_price2" />
+
+    <TextView
+        android:id="@+id/tv_availability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/tv_availability_text"
+        app:layout_constraintStart_toEndOf="@+id/tv_detail_amount"
+        app:layout_constraintTop_toBottomOf="@+id/tv_price2" />
+
+    <TextView
+        android:id="@+id/tv_detail_availability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/tv_detail_availability"
+        app:layout_constraintStart_toEndOf="@+id/tv_availability"
+        app:layout_constraintTop_toBottomOf="@+id/tv_price2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
