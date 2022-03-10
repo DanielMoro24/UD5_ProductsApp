@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.morodaniel.ud5_products.databinding.FragmentProductListBinding
 import com.morodaniel.ud5_products.network.NetworkConfig
@@ -18,7 +19,11 @@ import retrofit2.Response
 class ProductListFragment : Fragment() {
     private var _binding: FragmentProductListBinding? = null
     private val binding get() = _binding!!
-    private val adapter = ProductListAdapter()
+    private val adapter = ProductListAdapter {
+        val action =
+            ProductListFragmentDirections.actionProductListFragmentToProductDetailFragment(it.id)
+        findNavController().navigate(action)
+    }
 
 
     override fun onCreateView(

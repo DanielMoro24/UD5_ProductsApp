@@ -1,14 +1,16 @@
 package com.morodaniel.ud5_products.ui
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.morodaniel.ud5_products.databinding.ItemProductBinding
+import com.morodaniel.ud5_products.extensions.imageUrl
 import com.morodaniel.ud5_products.model.Product
 
-class ProductListAdapter :
+class ProductListAdapter(private val onProductClick: (Product) -> Unit) :
     ListAdapter<Product, ProductListAdapter.ViewHolder>(TechnologyItemCallback()) {
 
     inner class ViewHolder(val binding: ItemProductBinding) :
@@ -20,9 +22,13 @@ class ProductListAdapter :
         return ViewHolder(binding)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val product = getItem(position)
-
+        holder.binding.tvName.text = product.name
+        holder.binding.tvPrice.text = product.discountPrice.toString() + " €"
+        holder.binding.ivImage.imageUrl(product.image)
+        holder.binding.root.setOnClickListener { onProductClick(product) }
     }
 
 }
