@@ -22,6 +22,7 @@
         tools:ignore="ImageContrastCheck" />
 
     <TextView
+        style="@style/TittlesStyle"
         android:id="@+id/tv_name2"
         android:layout_width="53dp"
         android:layout_height="19dp"
@@ -32,6 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_image2" />
 
     <TextView
+        style="@style/DetailsStyle"
         android:id="@+id/tv_detail_name"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
@@ -45,6 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_name2" />
 
     <TextView
+        style="@style/TittlesStyle"
         android:id="@+id/tv_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,6 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_detail_name" />
 
     <TextView
+        style="@style/DetailsStyle"
         android:id="@+id/tv_detail_description"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
@@ -68,6 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_description" />
 
     <TextView
+        style="@style/TittlesStyle"
         android:id="@+id/tv_price2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -78,6 +83,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_detail_description" />
 
     <TextView
+        style="@style/DetailsStyle"
         android:id="@+id/tv_detail_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -88,6 +94,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_detail_description" />
 
     <TextView
+        style="@style/TittlesStyle"
         android:id="@+id/tv_discount_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -98,7 +105,8 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_detail_description" />
 
     <TextView
-        android:id="@+id/tv_detail_dicount_price"
+        style="@style/DiscountPriceStyle"
+        android:id="@+id/tv_detail_discount_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -108,6 +116,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_detail_description" />
 
     <TextView
+        style="@style/TittlesStyle"
         android:id="@+id/tv_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -118,6 +127,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_price2" />
 
     <TextView
+        style="@style/DetailsStyle"
         android:id="@+id/tv_detail_amount"
         android:layout_width="58dp"
         android:layout_height="wrap_content"
@@ -128,6 +138,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_price2" />
 
     <TextView
+        style="@style/TittlesStyle"
         android:id="@+id/tv_availability"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -138,6 +149,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_price2" />
 
     <TextView
+        style="@style/DetailsStyle"
         android:id="@+id/tv_detail_availability"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

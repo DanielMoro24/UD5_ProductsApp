@@ -58,7 +58,7 @@ class ProductDetailFragment : Fragment() {
                         binding.tvDetailName.text = prod.name
                         binding.tvDetailDescription.text = prod.description
                         binding.tvDetailPrice.text = prod.price.toString() + " €"
-                        binding.tvDetailDicountPrice.text = prod.discountPrice.toString() + " €"
+                        binding.tvDetailDiscountPrice.text = prod.discountPrice.toString() + " €"
                         binding.tvDetailAmount.text = prod.amount.toString()
                         if (prod.availability) {
                             binding.tvDetailAvailability.text = "Available"

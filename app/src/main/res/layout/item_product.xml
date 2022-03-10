@@ -21,6 +21,7 @@
         tools:ignore="ImageContrastCheck" />
 
     <TextView
+        style="@style/DetailsStyle"
         android:id="@+id/tv_name"
         android:layout_width="178dp"
         android:layout_height="40dp"
@@ -34,6 +35,7 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_image" />
 
     <TextView
+        style="@style/DetailsStyle"
         android:id="@+id/tv_price"
         android:layout_width="82dp"
         android:layout_height="20dp"
@@ -46,6 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
     <TextView
+        style="@style/AmountWarningStyle"
         android:id="@+id/tv_amountWarning"
         android:layout_width="178dp"
         android:layout_height="23dp"
