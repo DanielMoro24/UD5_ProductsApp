@@ -65,6 +65,10 @@ class ProductDetailFragment : Fragment() {
                         } else {
                             binding.tvDetailAvailability.text = "Not available"
                         }
+                        if (prod.discountPrice.equals(prod.price)) {
+                            binding.tvDetailDiscountPrice.visibility = View.GONE
+                            binding.tvDiscountPrice.visibility = View.GONE
+                        }
                     }
                 } else {
                     Log.e("Network", "connexion error")

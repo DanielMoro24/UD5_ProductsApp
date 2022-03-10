@@ -1,7 +1,9 @@
 package com.morodaniel.ud5_products.ui
 
 import android.annotation.SuppressLint
+import android.opengl.Visibility
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -29,6 +31,9 @@ class ProductListAdapter(private val onProductClick: (Product) -> Unit) :
         holder.binding.tvPrice.text = product.discountPrice.toString() + " €"
         holder.binding.ivImage.imageUrl(product.image)
         holder.binding.root.setOnClickListener { onProductClick(product) }
+        if(product.amount > 5){
+            holder.binding.tvAmountWarning.visibility = View.GONE
+        }
     }
 
 }
